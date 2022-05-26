@@ -16,6 +16,7 @@
 		FAF34C9B283EB678005B3426 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C9A283EB678005B3426 /* Card.swift */; };
 		FAF34C9D283EB8BB005B3426 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C9C283EB8BB005B3426 /* Deck.swift */; };
 		FAF34C9F283ECC01005B3426 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C9E283ECC01005B3426 /* Game.swift */; };
+		FAF34CA1283F1541005B3426 /* Programming Project 2 Set.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FAF34CA0283F1541005B3426 /* Programming Project 2 Set.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FAF34C9A283EB678005B3426 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FAF34C9C283EB8BB005B3426 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		FAF34C9E283ECC01005B3426 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FAF34CA0283F1541005B3426 /* Programming Project 2 Set.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Programming Project 2 Set.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		FAF34C79283EB1EC005B3426 = {
 			isa = PBXGroup;
 			children = (
+				FAF34CA0283F1541005B3426 /* Programming Project 2 Set.pdf */,
 				FAF34C84283EB1EC005B3426 /* Set */,
 				FAF34C83283EB1EC005B3426 /* Products */,
 			);
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF34C92283EB1EE005B3426 /* LaunchScreen.storyboard in Resources */,
+				FAF34CA1283F1541005B3426 /* Programming Project 2 Set.pdf in Resources */,
 				FAF34C8F283EB1EE005B3426 /* Assets.xcassets in Resources */,
 				FAF34C8D283EB1EC005B3426 /* Main.storyboard in Resources */,
 			);
