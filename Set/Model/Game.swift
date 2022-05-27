@@ -36,8 +36,7 @@ class Game {
     
     func checkIfMatch() -> Bool {
         guard selectedCards.count == 3 else {
-            print("check for match when more selected cards")
-            exit(EXIT_FAILURE)
+            assert(false, "check for match when more selected cards")
         }
         return selectedCards.first!.isMatch(selectedCards[1], selectedCards[2])
     }

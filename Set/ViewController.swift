@@ -34,8 +34,7 @@ class ViewController: UIViewController {
             return
         }
         guard let card = getCardByButton(button: sender) else {
-            print("no card matches this button")
-            exit(EXIT_FAILURE)
+            assert(false, "no card matches this button")
         }
         
         if game.selectedCards.contains(card) && game.selectedCards.count < 3 {
@@ -108,8 +107,7 @@ class ViewController: UIViewController {
             return
         }
         guard let button = getFreeButton() else {
-            print("no more free buttons")
-            exit(EXIT_FAILURE)
+            assert(false, "no more free buttons")
         }
         cardToButton[card] = button
         show(card: card, onButton: button)
@@ -127,19 +125,19 @@ class ViewController: UIViewController {
         button.backgroundColor = .white
         
         var attributes: [NSAttributedString.Key : Any] = [
-            .strokeColor: card.color.toUIKitColor(),
+            .strokeColor: card.color.rawValue,
             .font: UIFont(name: "Chalkduster", size: 30.0)!
         ]
         switch card.shading {
         case .open:
             attributes[.strokeWidth] = 7
-            attributes[.foregroundColor] = card.color.toUIKitColor().withAlphaComponent(1)
+            attributes[.foregroundColor] = card.color.rawValue.withAlphaComponent(1)
         case .solid:
             attributes[.strokeWidth] = -2
-            attributes[.foregroundColor] = card.color.toUIKitColor().withAlphaComponent(1)
+            attributes[.foregroundColor] = card.color.rawValue.withAlphaComponent(1)
         case .stripped:
             attributes[.strokeWidth] = 7
-            attributes[.foregroundColor] = card.color.toUIKitColor().withAlphaComponent(0.20)
+            attributes[.foregroundColor] = card.color.rawValue.withAlphaComponent(0.20)
         }
         
         
@@ -167,8 +165,7 @@ class ViewController: UIViewController {
     private func redrawCardForButton(button: UIButton) {
         button.isHidden = false
         guard let card = getCardByButton(button: button) else {
-            print("no card for this button")
-            exit(EXIT_FAILURE)
+            assert(false, "no card for this button")
         }
         if game.selectedCards.contains(card) {
             button.layer.borderWidth = 3
@@ -194,16 +191,30 @@ class ViewController: UIViewController {
 
 }
 
-extension Color {
-    func toUIKitColor() -> UIColor {
+extension Color: RawRepresentable {
+    typealias RawValue = UIColor
+
+    init?(rawValue: RawValue) {
+        switch rawValue {
+        case .red:
+            self = .red
+        case .green:
+            self = .green
+        case .purple:
+            self = .purple
+        default:
+            return nil
+        }
+    }
+
+    var rawValue: RawValue {
         switch self {
         case .red:
-            return UIColor.red
+            return .red
         case .green:
-            return UIColor.green
+            return .green
         case .purple:
-            return UIColor.purple
+            return .purple
         }
     }
 }
-
