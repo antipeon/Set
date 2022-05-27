@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA99E4892840E85E00430FA7 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99E4882840E85E00430FA7 /* Int.swift */; };
 		FAF34C86283EB1EC005B3426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C85283EB1EC005B3426 /* AppDelegate.swift */; };
 		FAF34C88283EB1EC005B3426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C87283EB1EC005B3426 /* SceneDelegate.swift */; };
 		FAF34C8A283EB1EC005B3426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C89283EB1EC005B3426 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA99E4882840E85E00430FA7 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FAF34C82283EB1EC005B3426 /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF34C85283EB1EC005B3426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF34C87283EB1EC005B3426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA99E4872840E84A00430FA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA99E4882840E85E00430FA7 /* Int.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FAF34C79283EB1EC005B3426 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		FAF34C84283EB1EC005B3426 /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				FA99E4872840E84A00430FA7 /* Extensions */,
 				FAF34C99283EB64F005B3426 /* Model */,
 				FAF34C85283EB1EC005B3426 /* AppDelegate.swift */,
 				FAF34C87283EB1EC005B3426 /* SceneDelegate.swift */,
@@ -162,6 +173,7 @@
 				FAF34C8A283EB1EC005B3426 /* ViewController.swift in Sources */,
 				FAF34C9F283ECC01005B3426 /* Game.swift in Sources */,
 				FAF34C86283EB1EC005B3426 /* AppDelegate.swift in Sources */,
+				FA99E4892840E85E00430FA7 /* Int.swift in Sources */,
 				FAF34C9D283EB8BB005B3426 /* Deck.swift in Sources */,
 				FAF34C88283EB1EC005B3426 /* SceneDelegate.swift in Sources */,
 				FAF34C9B283EB678005B3426 /* Card.swift in Sources */,

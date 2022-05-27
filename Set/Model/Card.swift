@@ -8,7 +8,7 @@
 import Foundation
 
 struct Card {
-    private let id: Int
+    private let id: UUID
     
     let shading: Shading
     let color: Color
@@ -20,46 +20,37 @@ struct Card {
         self.color = color
         self.symbol = symbol
         self.number = number
-        id = Card.getUniqueIdentifier()
-    }
-    
-    static var identifierFactory = 0
-    
-    static func getUniqueIdentifier() -> Int {
-        defer {
-            identifierFactory += 1
-        }
-        return identifierFactory
+        id = UUID()
     }
 }
 
 
-enum Shading : CaseIterable {
+enum Shading: CaseIterable {
     case solid
     case stripped
     case open
 }
 
-enum Color : CaseIterable {
+enum Color: CaseIterable {
     case red
     case green
     case purple
 }
 
-enum Symbol : String, CaseIterable {
+enum Symbol: String, CaseIterable {
     case diamond = "△"
     case squiggle = "⌽"
     case oval = "Ο"
 }
 
-enum Number : Int, CaseIterable {
+enum Number: Int, CaseIterable {
     case one = 1
     case two
     case three
 }
 
 
-extension Card : Hashable {
+extension Card: Hashable {
     static func == (lhs: Card, rhs: Card) -> Bool {
         return lhs.id == rhs.id
     }

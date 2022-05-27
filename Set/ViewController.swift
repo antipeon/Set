@@ -65,7 +65,6 @@ class ViewController: UIViewController {
         }
         updateScoreLabel()
         redrawCardsWithSelection()
-//        redrawCardForButton(button: sender)
     }
     
     

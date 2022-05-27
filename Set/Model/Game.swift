@@ -10,8 +10,8 @@ import Foundation
 
 class Game {
     private(set) var deck = Deck()
-    private(set) var selectedCards = [Card]()
-    private(set) var matchedCards = [Card]()
+    private(set) var selectedCards: [Card] = []
+    private(set) var matchedCards: [Card] = []
     var score = 0
     
     static let matchScore = 3
@@ -21,8 +21,8 @@ class Game {
     func startNewGame() {
         score = 0
         deck = Deck()
-        selectedCards = [Card]()
-        matchedCards = [Card]()
+        selectedCards = []
+        matchedCards = []
     }
     
     func touchCard(card: Card) -> Bool {
