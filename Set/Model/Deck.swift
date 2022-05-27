@@ -29,9 +29,6 @@ class Deck {
     }
     
     func dealCard() -> Card? {
-        guard !cards.isEmpty else {
-            return nil
-        }
         return cards.popLast()
     }
     

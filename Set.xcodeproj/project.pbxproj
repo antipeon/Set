@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA99E4892840E85E00430FA7 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99E4882840E85E00430FA7 /* Int.swift */; };
+		FA99E49628411BBF00430FA7 /* Shading.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99E49528411BBF00430FA7 /* Shading.swift */; };
+		FA99E49828411BCE00430FA7 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99E49728411BCE00430FA7 /* Number.swift */; };
+		FA99E49A28411BDD00430FA7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99E49928411BDD00430FA7 /* Color.swift */; };
+		FA99E49C28411BE700430FA7 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99E49B28411BE700430FA7 /* Symbol.swift */; };
 		FAF34C86283EB1EC005B3426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C85283EB1EC005B3426 /* AppDelegate.swift */; };
 		FAF34C88283EB1EC005B3426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C87283EB1EC005B3426 /* SceneDelegate.swift */; };
 		FAF34C8A283EB1EC005B3426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF34C89283EB1EC005B3426 /* ViewController.swift */; };
@@ -21,7 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA99E4882840E85E00430FA7 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		FA99E49528411BBF00430FA7 /* Shading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shading.swift; sourceTree = "<group>"; };
+		FA99E49728411BCE00430FA7 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		FA99E49928411BDD00430FA7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FA99E49B28411BE700430FA7 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		FAF34C82283EB1EC005B3426 /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF34C85283EB1EC005B3426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF34C87283EB1EC005B3426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,12 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA99E4872840E84A00430FA7 /* Extensions */ = {
+		FA99E49428411B7F00430FA7 /* CardEntities */ = {
 			isa = PBXGroup;
 			children = (
-				FA99E4882840E85E00430FA7 /* Int.swift */,
+				FA99E49528411BBF00430FA7 /* Shading.swift */,
+				FA99E49728411BCE00430FA7 /* Number.swift */,
+				FA99E49928411BDD00430FA7 /* Color.swift */,
+				FA99E49B28411BE700430FA7 /* Symbol.swift */,
 			);
-			path = Extensions;
+			path = CardEntities;
 			sourceTree = "<group>";
 		};
 		FAF34C79283EB1EC005B3426 = {
@@ -75,7 +84,6 @@
 		FAF34C84283EB1EC005B3426 /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				FA99E4872840E84A00430FA7 /* Extensions */,
 				FAF34C99283EB64F005B3426 /* Model */,
 				FAF34C85283EB1EC005B3426 /* AppDelegate.swift */,
 				FAF34C87283EB1EC005B3426 /* SceneDelegate.swift */,
@@ -91,6 +99,7 @@
 		FAF34C99283EB64F005B3426 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA99E49428411B7F00430FA7 /* CardEntities */,
 				FAF34C9A283EB678005B3426 /* Card.swift */,
 				FAF34C9C283EB8BB005B3426 /* Deck.swift */,
 				FAF34C9E283ECC01005B3426 /* Game.swift */,
@@ -170,13 +179,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA99E49828411BCE00430FA7 /* Number.swift in Sources */,
+				FA99E49C28411BE700430FA7 /* Symbol.swift in Sources */,
 				FAF34C8A283EB1EC005B3426 /* ViewController.swift in Sources */,
 				FAF34C9F283ECC01005B3426 /* Game.swift in Sources */,
 				FAF34C86283EB1EC005B3426 /* AppDelegate.swift in Sources */,
-				FA99E4892840E85E00430FA7 /* Int.swift in Sources */,
 				FAF34C9D283EB8BB005B3426 /* Deck.swift in Sources */,
 				FAF34C88283EB1EC005B3426 /* SceneDelegate.swift in Sources */,
 				FAF34C9B283EB678005B3426 /* Card.swift in Sources */,
+				FA99E49628411BBF00430FA7 /* Shading.swift in Sources */,
+				FA99E49A28411BDD00430FA7 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

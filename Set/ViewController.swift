@@ -30,11 +30,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func touchCard(_ sender: UIButton) {
-        guard sender.isHidden == false else {
-            return
-        }
         guard let card = getCardByButton(button: sender) else {
-            assert(false, "no card matches this button")
+            fatalError("no card matches this button")
         }
         
         if game.selectedCards.contains(card) && game.selectedCards.count < 3 {
@@ -75,14 +72,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let radius = 6.0
-        
-        newGameLabel.layer.cornerRadius = radius
-        scoreLabel.layer.masksToBounds = true
-        scoreLabel.layer.cornerRadius = radius
-        dealMoreLabel.layer.cornerRadius = radius
+        initializeLabels()
         startNewGame()
         // Do any additional setup after loading the view.
+    }
+    
+    private func initializeLabels() {
+        let cornerRadius = 6.0
+        newGameLabel.layer.cornerRadius = cornerRadius
+        scoreLabel.layer.masksToBounds = true
+        scoreLabel.layer.cornerRadius = cornerRadius
+        dealMoreLabel.layer.cornerRadius = cornerRadius
     }
     
     private func hideAllCards() {
@@ -125,19 +125,19 @@ class ViewController: UIViewController {
         button.backgroundColor = .white
         
         var attributes: [NSAttributedString.Key : Any] = [
-            .strokeColor: card.color.rawValue,
+            .strokeColor: card.color.UIKitColor,
             .font: UIFont(name: "Chalkduster", size: 30.0)!
         ]
         switch card.shading {
         case .open:
             attributes[.strokeWidth] = 7
-            attributes[.foregroundColor] = card.color.rawValue.withAlphaComponent(1)
+            attributes[.foregroundColor] = card.color.UIKitColor.withAlphaComponent(1)
         case .solid:
             attributes[.strokeWidth] = -2
-            attributes[.foregroundColor] = card.color.rawValue.withAlphaComponent(1)
+            attributes[.foregroundColor] = card.color.UIKitColor.withAlphaComponent(1)
         case .stripped:
             attributes[.strokeWidth] = 7
-            attributes[.foregroundColor] = card.color.rawValue.withAlphaComponent(0.20)
+            attributes[.foregroundColor] = card.color.UIKitColor.withAlphaComponent(0.20)
         }
         
         
@@ -186,35 +186,5 @@ class ViewController: UIViewController {
     
     private func updateScoreLabel() {
         scoreLabel.text = "Score: \(game.score)"
-    }
-
-
-}
-
-extension Color: RawRepresentable {
-    typealias RawValue = UIColor
-
-    init?(rawValue: RawValue) {
-        switch rawValue {
-        case .red:
-            self = .red
-        case .green:
-            self = .green
-        case .purple:
-            self = .purple
-        default:
-            return nil
-        }
-    }
-
-    var rawValue: RawValue {
-        switch self {
-        case .red:
-            return .red
-        case .green:
-            return .green
-        case .purple:
-            return .purple
-        }
     }
 }
