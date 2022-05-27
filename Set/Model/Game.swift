@@ -9,6 +9,8 @@ import Foundation
 
 
 class Game {
+    static let matchCount = 3
+    
     private(set) var deck = Deck()
     private(set) var selectedCards: [Card] = []
     private(set) var matchedCards: [Card] = []
@@ -35,13 +37,19 @@ class Game {
     }
     
     func checkIfMatch() -> Bool {
-        assert(selectedCards.count == 3, "check for match when more selected cards")
+        if (selectedCards.count < Game.matchCount) {
+            return false
+        }
         
         return selectedCards.first!.isMatch(selectedCards[1], selectedCards[2])
     }
     
     func clearSelected() {
         selectedCards.removeAll()
+    }
+    
+    func clearFirstCards() {
+        selectedCards.removeFirst(Game.matchCount)
     }
 }
 

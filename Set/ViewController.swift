@@ -19,22 +19,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func dealMore(_ sender: UIButton) {
-        let cardsToDeal = 3
-        guard game.deck.cards.count >= cardsToDeal && cardToButton.count + cardsToDeal <= cardButtons.count else {
+        guard game.deck.cards.count >= Game.matchCount && cardToButton.count + Game.matchCount <= cardButtons.count else {
             sender.isEnabled = false
             return
         }
         sender.isEnabled = true
-        dealCards(number: cardsToDeal)
+        
+        updateFirstSelectedCardsState()
+        dealCards()
     }
-    
     
     @IBAction func touchCard(_ sender: UIButton) {
         guard let card = getCardByButton(button: sender) else {
             fatalError("no card matches this button")
         }
         
-        if game.selectedCards.contains(card) && game.selectedCards.count < 3 {
+        if game.selectedCards.contains(card) && game.selectedCards.count >= Game.matchCount {
             return
         }
         
@@ -42,27 +42,17 @@ class ViewController: UIViewController {
         if deselected {
             game.score += Game.deselectionScore
         }
-        if game.selectedCards.count == 3 {
-            if game.checkIfMatch() {
-                game.score += Game.matchScore
-                game.selectedCards.forEach {
-                    cardToButton[$0]?.isHidden = true
-                    cardToButton[$0] = nil
-                }
-                
-                game.clearSelected()
-                dealCards(number: 3)
-            } else {
-                game.score += Game.mismatchScore
+
+        if game.selectedCards.count == Game.matchCount + 1 {
+            let isMatch = game.checkIfMatch()
+            updateFirstSelectedCardsState()
+            if isMatch {
+                dealCards()
             }
-        } else if game.selectedCards.count == 4 {
-            game.clearSelected()
-            _ = game.touchCard(card: card)
         }
         updateScoreLabel()
         redrawCardsWithSelection()
     }
-    
     
     //MARK: outlets
     @IBOutlet var cardButtons: [UIButton]!
@@ -95,6 +85,10 @@ class ViewController: UIViewController {
         dealCards(number: 12)
     }
     
+    private func dealCards() {
+        dealCards(number: Game.matchCount)
+    }
+
     private func dealCards(number: Int) {
         for _ in 0..<number {
             dealCard()
@@ -117,6 +111,19 @@ class ViewController: UIViewController {
         return cardButtons.first(where: {$0.isHidden})
     }
     
+    private func updateFirstSelectedCardsState() {
+        if game.checkIfMatch() {
+            game.score += Game.matchScore
+            game.selectedCards[..<Game.matchCount].forEach {
+                cardToButton[$0]?.isHidden = true
+                cardToButton[$0] = nil
+            }
+        } else {
+            game.score += Game.mismatchScore
+        }
+        game.clearFirstCards()
+    }
+
     private func show(card: Card, onButton button: UIButton) {
         var title = ""
         for _ in 1...card.number.rawValue {
