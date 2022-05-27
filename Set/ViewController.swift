@@ -107,7 +107,7 @@ class ViewController: UIViewController {
             return
         }
         guard let button = getFreeButton() else {
-            assert(false, "no more free buttons")
+            fatalError("no more free buttons")
         }
         cardToButton[card] = button
         show(card: card, onButton: button)
@@ -165,7 +165,7 @@ class ViewController: UIViewController {
     private func redrawCardForButton(button: UIButton) {
         button.isHidden = false
         guard let card = getCardByButton(button: button) else {
-            assert(false, "no card for this button")
+            fatalError("no card for this button")
         }
         if game.selectedCards.contains(card) {
             button.layer.borderWidth = 3
