@@ -112,6 +112,9 @@ class ViewController: UIViewController {
     }
     
     private func updateFirstSelectedCardsState() {
+        guard game.selectedCards.count >= Game.matchCount else {
+            return
+        }
         if game.checkIfMatch() {
             game.score += Game.matchScore
             game.selectedCards[..<Game.matchCount].forEach {

@@ -49,7 +49,7 @@ class Game {
     }
     
     func clearFirstCards() {
-        selectedCards.removeFirst(Game.matchCount)
+        selectedCards.removeFirst(min(Game.matchCount, selectedCards.count))
     }
 }
 
