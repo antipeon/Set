@@ -189,9 +189,14 @@ class ViewController: UIViewController {
     private func startNewGame() {
         game.startNewGame()
         cardToButton = [Card: UIButton]()
+        activateDealMoreButton()
         hideAllCards()
         dealFirstCards()
         redrawCardsWithSelection()
+    }
+    
+    private func activateDealMoreButton() {
+        dealMoreLabel.isEnabled = true
     }
     
     private func updateScoreLabel() {
